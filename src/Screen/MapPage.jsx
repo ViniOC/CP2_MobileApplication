@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ActivityIndicator, Image, StyleSheet, View } from 'react-native'
 import MapView, { Marker } from 'react-native-maps';
 import getActualPosition from '../services/LocationService';
+import mockLocations from "../mocks/mockLocations";
 
 export default function MapPage() {
 
@@ -52,6 +53,23 @@ export default function MapPage() {
                 style={{ width: 30, height: 30 }}
               />
             </Marker>
+            {mockLocations.map((item) => 
+                <Marker
+                    key={item.id}
+                    coordinate={{
+                    latitude: item.latitude,
+                    longitude: item.longitude,
+                    }}
+                    title={item.title}
+                    description={`Location ID: ${item.id}`}
+                >
+                    <Image
+                    source={item.image}
+                    style={{ width: 30, height: 30 }}
+                    resizeMode="contain"
+                    />
+                </Marker>
+            )}
     
             </MapView>
           : 
