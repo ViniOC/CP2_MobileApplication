@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ActivityIndicator, Image, StyleSheet, View } from 'react-native'
 import MapView, { Marker } from 'react-native-maps';
 import getActualPosition from '../services/LocationService';
-import mockLocations from "../mocks/mockLocations";
+import mockLocations from "../mocks/MockLocations";
 
 export default function MapPage() {
 
