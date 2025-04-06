@@ -1,15 +1,24 @@
 import { StyleSheet, View } from 'react-native';
 import Header from './src/Components/Header';
 import Footer from './src/Components/Footer';
+import MapPage from './src/Screen/MapPage';
+import HomePage from './src/Screen/HomePage';
+import DevPage from './src/Screen/DevPage';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const StackNavigation = createStackNavigator();
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Header />
-      <View style={styles.content}>
-        {/* Todo o conteúdo principal da sua app vai aqui */}
-
-      </View>
+        <NavigationContainer>
+          <StackNavigation.Navigator initialRouteName="Home" screenOptions={{ headerTitleAlign: "center" }}>
+            <StackNavigation.Screen name="Home" component={HomePage} />
+            <StackNavigation.Screen name="Dev" component={DevPage} />
+            <StackNavigation.Screen name="MapPage" component={MapPage} />
+          </StackNavigation.Navigator>
+        </NavigationContainer>
       <Footer />
     </View>
   );
