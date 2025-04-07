@@ -1,8 +1,3 @@
-import roupas from '../../assets/camiseta.png';
-import servico from '../../assets/servicos-voluntarios.png';
-import higiene from '../../assets/produtos-de-higiene-pessoal.png';
-import alimento from '../../assets/alimentos.png';
-
 const mockLocations = [
   {
     id: 1,
