@@ -6,6 +6,7 @@ import HomePage from './src/Screen/HomePage';
 import DevPage from './src/Screen/DevPage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import ComunitiesScreen from './src/Screen/ComunitiesScreen';
 
 const StackNavigation = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
             <StackNavigation.Screen name="Home" component={HomePage} />
             <StackNavigation.Screen name="Dev" component={DevPage} />
             <StackNavigation.Screen name="MapPage" component={MapPage} />
+            <StackNavigation.Screen name="CommunitiesScreen" component={ComunitiesScreen} />
           </StackNavigation.Navigator>
         </NavigationContainer>
       <Footer />
