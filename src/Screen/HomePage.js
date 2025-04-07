@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet} from 'react-native'
 import FeatureCard from '../Components/FeatureCard'
+import NavigationBottom from '../Components/NavigationBottom'
 
 
 
@@ -7,21 +8,10 @@ export default function HomePage({navigation}) {
     return(
         <View style={styles.container}>
             <View style={styles.headerLinks}>
-                <TouchableOpacity style={styles.bottom} onPress={() => navigation.navigate('MapPage')}>
-                    <Text style={styles.textBottom}>Go to Map Page</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.bottom} onPress={() => navigation.navigate('Dev')}>
-                    <Text style={styles.textBottom}>DevPage</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.bottom} onPress={() => navigation.navigate('MapPage')}>
-                    <Text style={styles.textBottom}>Go to Map Page</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.bottom} onPress={() => navigation.navigate('MapPage')}>
-                    <Text style={styles.textBottom}>Go to Map Page</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.bottom} onPress={() => navigation.navigate('MapPage')}>
-                    <Text style={styles.textBottom}>Go to Map Page</Text>
-                </TouchableOpacity>
+                <NavigationBottom nameBottom="DevPage" navigation={navigation} namePage="Dev" />
+                <NavigationBottom nameBottom="Go to CommunitiesScreen" navigation={navigation} namePage="CommunitiesScreen" />
+                <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
+                <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
             </View>
             <Text style={styles.title}>Conectando Ajuda a Quem Precisa</Text>
             <Text style={styles.subtitle}>Voluntários, ONGs e comunidades juntos por um mundo melhor</Text>
