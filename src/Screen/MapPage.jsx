@@ -3,6 +3,7 @@ import { ActivityIndicator, Image, StyleSheet, View } from 'react-native'
 import MapView, { Marker } from 'react-native-maps';
 import getActualPosition from '../services/LocationService';
 import mockLocations from "../mocks/MockLocations";
+import { Ionicons } from '@expo/vector-icons';
 
 export default function MapPage() {
 
@@ -60,14 +61,10 @@ export default function MapPage() {
                     latitude: item.latitude,
                     longitude: item.longitude,
                     }}
-                    title={item.title}
-                    description={`Location ID: ${item.id}`}
+                    title={item.name}
+                    description={`necessidades ${item.necessidades.map((n) => n.name).join(', ')}`}
                 >
-                    <Image
-                    source={item.image}
-                    style={{ width: 30, height: 30 }}
-                    resizeMode="contain"
-                    />
+                  <Ionicons name="people" size={32} color="#000" />
                 </Marker>
             )}
     
