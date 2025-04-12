@@ -3,7 +3,7 @@ import mockLocations from '../mocks/MockLocations';
 import NavigationBottom from '../Components/NavigationBottom';
 import ComunityCard from '../Components/CommunityDetailsCard';
 
-export default function ComunitiesScreen({navigation}) {
+export default function CommunitiesScreen({navigation}) {
 
     const data = mockLocations;
   
