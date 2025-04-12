@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 
 export default function ComunityCard({ item }) {
   return (
@@ -7,9 +8,12 @@ export default function ComunityCard({ item }) {
       <Text style={styles.title}>{item.name}</Text>
       <Text style={styles.address}>{item.address}</Text>
       <Text style={styles.subtitle}>Necessidades:</Text>
-      {item.necessidades.map((n) => (
-        <Text key={n.id} style={styles.item}>• {n.name}</Text>
-      ))}
+      <FlatList
+        data={item.needs}
+        keyExtractor={(n) => n.id.toString()}
+        renderItem={({ item: need }) => <Text style={styles.item}>• {need.name}</Text>}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 }
