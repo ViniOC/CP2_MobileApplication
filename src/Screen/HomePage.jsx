@@ -8,8 +8,8 @@ export default function HomePage({navigation}) {
     return(
         <View style={styles.container}>
             <View style={styles.headerLinks}>
-                <NavigationBottom nameBottom="DevPage" navigation={navigation} namePage="Dev" />
-                <NavigationBottom nameBottom="Go to CommunitiesScreen" navigation={navigation} namePage="CommunitiesScreen" />
+                <NavigationBottom nameBottom="About the Developers" navigation={navigation} namePage="Dev" />
+                <NavigationBottom nameBottom="Registered communities" navigation={navigation} namePage="CommunitiesScreen" />
                 <NavigationBottom nameBottom="Register your community" navigation={navigation} namePage="CommunityPage" />
                 <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
             </View>
@@ -50,18 +50,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         flexWrap: "wrap",
-    },
-    bottom: {
-        borderRadius: 8,
-        padding: 10,
-        borderWidth: 1,
-        marginBottom: 10,
-        backgroundColor: "#ece9f6"
-    },
-    textBottom: {
-        fontSize: 16,
-        textAlign: "center",
-        color: "black"
     },
     title: {
         fontSize: 24,
