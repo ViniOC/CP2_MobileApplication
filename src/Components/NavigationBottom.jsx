@@ -11,7 +11,7 @@ export default function NavigationBottom({nameBottom, navigation, namePage}) {
 const styles = StyleSheet.create({
     bottom: {
         borderRadius: 8,
-        padding: 10,
+        padding: 8,
         borderWidth: 1,
         marginBottom: 10,
         backgroundColor: "#ece9f6"
