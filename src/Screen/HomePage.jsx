@@ -10,7 +10,7 @@ export default function HomePage({navigation}) {
             <View style={styles.headerLinks}>
                 <NavigationBottom nameBottom="DevPage" navigation={navigation} namePage="Dev" />
                 <NavigationBottom nameBottom="Go to CommunitiesScreen" navigation={navigation} namePage="CommunitiesScreen" />
-                <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
+                <NavigationBottom nameBottom="Register your community" navigation={navigation} namePage="CommunityPage" />
                 <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
             </View>
             <Text style={styles.title}>Conectando Ajuda a Quem Precisa</Text>

@@ -1,12 +1,12 @@
 import { StyleSheet, View } from 'react-native';
-import Header from './src/Components/Header';
 import Footer from './src/Components/Footer';
 import MapPage from './src/Screen/MapPage';
 import HomePage from './src/Screen/HomePage';
 import DevPage from './src/Screen/DevPage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import ComunitiesScreen from './src/Screen/ComunitiesScreen';
+import CommunitiesScreen from './src/Screen/CommunitiesScreen';
+import CommunityRegister from './src/Screen/CommunityRegister';
 
 const StackNavigation = createStackNavigator();
 
@@ -18,7 +18,8 @@ export default function App() {
             <StackNavigation.Screen name="Home" component={HomePage} />
             <StackNavigation.Screen name="Dev" component={DevPage} />
             <StackNavigation.Screen name="MapPage" component={MapPage} />
-            <StackNavigation.Screen name="CommunitiesScreen" component={ComunitiesScreen} />
+            <StackNavigation.Screen name="CommunitiesScreen" component={CommunitiesScreen} />
+            <StackNavigation.Screen name="CommunityPage" component={CommunityRegister} />
           </StackNavigation.Navigator>
         </NavigationContainer>
       <Footer />
