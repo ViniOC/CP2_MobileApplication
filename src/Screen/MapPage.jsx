@@ -62,7 +62,7 @@ export default function MapPage() {
                     longitude: item.longitude,
                     }}
                     title={item.name}
-                    description={`necessidades ${item.necessidades.map((n) => n.name).join(', ')}`}
+                    description={`necessidades: ${item.needs.map((n) => n.name).join(', ')}`}
                 >
                   <Ionicons name="people" size={32} color="#000" />
                 </Marker>
