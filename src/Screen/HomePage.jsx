@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView} from 'react-native'
 import FeatureCard from '../Components/FeatureCard'
 import NavigationBottom from '../Components/NavigationBottom'
 
@@ -6,13 +6,20 @@ import NavigationBottom from '../Components/NavigationBottom'
 
 export default function HomePage({navigation}) {
     return(
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.headerLinks}>
                 <NavigationBottom nameBottom="About the Developers" navigation={navigation} namePage="Dev" />
                 <NavigationBottom nameBottom="Registered communities" navigation={navigation} namePage="CommunitiesScreen" />
                 <NavigationBottom nameBottom="Register your community" navigation={navigation} namePage="CommunityPage" />
                 <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
             </View>
+
+            <Text style={styles.name}>Solidarize</Text>
+
+            <Image
+                source={require('../../assets/Img-screen-home.jpg')}
+                style={styles.image}
+            />
             <Text style={styles.title}>Conectando Ajuda a Quem Precisa</Text>
             <Text style={styles.subtitle}>Voluntários, ONGs e comunidades juntos por um mundo melhor</Text>
             <View style={styles.featureCards}>
@@ -33,7 +40,7 @@ export default function HomePage({navigation}) {
                 />
             </View>
             
-        </View>
+        </ScrollView>
     )
 }
 
@@ -50,6 +57,21 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         flexWrap: "wrap",
+    },
+    name: {
+        fontSize: 30,
+        fontWeight: "bold",
+        textAlign: "center",
+        marginTop: 20,
+        textTransform: "uppercase",
+        color: "#4c3f8c",
+    },
+    image: { 
+        width: '95%', 
+        height: 200, 
+        marginTop: 20, 
+        marginHorizontal: 10, 
+        borderRadius: 10 
     },
     title: {
         fontSize: 24,

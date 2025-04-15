@@ -1,5 +1,5 @@
 
-import { Text, TextInput, View, TouchableOpacity, StyleSheet } from 'react-native'
+import { Text, TextInput, View, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import mockLocations from '../mocks/MockLocations'
 import { findAddressByCep, FindLatitudeAndLongitude } from '../services/GeolocationApis';
 import { useState } from 'react';
@@ -84,6 +84,10 @@ export default function CommunityRegister() {
     return(
         <View style={styles.container}>
             <Text style={styles.title}>Cadastro de Comunidade</Text>
+            <Image
+                source={require('../../assets/register-screen.jpg')}
+                style={styles.image}
+            />
             <TextInput
                 placeholder="Nome da Comunidade"
                 style={styles.textInput}
@@ -150,6 +154,13 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
         marginTop: 20,
+    },
+    image: { 
+        width: '95%', 
+        height: 200, 
+        marginVertical: 20, 
+        marginHorizontal: 10, 
+        borderRadius: 10, 
     },
     textInput: {
         borderWidth: 1,

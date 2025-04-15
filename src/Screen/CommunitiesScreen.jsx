@@ -1,4 +1,4 @@
-import { View, FlatList, StyleSheet } from 'react-native'
+import { View, FlatList, StyleSheet, Image } from 'react-native'
 import mockLocations from '../mocks/MockLocations';
 import NavigationBottom from '../Components/NavigationBottom';
 import ComunityCard from '../Components/CommunityDetailsCard';
@@ -12,6 +12,10 @@ export default function CommunitiesScreen({navigation}) {
             <View style={styles.headerLink}>
                 <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
             </View>
+            <Image
+                source={require('../../assets/community-registered.jpg')}
+                style={styles.image}
+            />
             <FlatList 
                 data={data}
                 keyExtractor={(item) => item.id.toString()}
@@ -32,5 +36,12 @@ const styles = StyleSheet.create({
         padding: 20,
         borderBottomWidth: 1,
         borderBottomColor: "#d8d2ec",
+    },
+    image: { 
+        width: '95%', 
+        height: 200, 
+        marginVertical: 20, 
+        marginHorizontal: 10, 
+        borderRadius: 10
     },
 });
