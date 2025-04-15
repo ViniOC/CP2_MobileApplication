@@ -64,7 +64,7 @@ export default function MapPage() {
                     title={item.name}
                     description={`necessidades: ${item.needs.map((n) => n.name).join(', ')}`}
                 >
-                  <Ionicons name="people" size={32} color="#000" />
+                  <Ionicons name="people" size={32} color="green" />
                 </Marker>
             )}
     
