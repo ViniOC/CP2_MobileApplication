@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
-export default function ComunityCard({ item }) {
+export default function CommunityDetailsCard({ item }) {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{item.name}</Text>

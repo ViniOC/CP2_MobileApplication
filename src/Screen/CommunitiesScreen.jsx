@@ -1,7 +1,7 @@
 import { View, FlatList, StyleSheet, Image } from 'react-native'
 import mockLocations from '../mocks/MockLocations';
 import NavigationBottom from '../Components/NavigationBottom';
-import ComunityCard from '../Components/CommunityDetailsCard';
+import CommunityDetailsCard from '../Components/CommunityDetailsCard';
 
 export default function CommunitiesScreen({navigation}) {
 
@@ -20,7 +20,7 @@ export default function CommunitiesScreen({navigation}) {
                 data={data}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                    <ComunityCard item={item} />
+                    <CommunityDetailsCard item={item} />
                 )}
             />
         </View>
