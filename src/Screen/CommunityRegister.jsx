@@ -1,5 +1,5 @@
 
-import { Text, TextInput, View, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import { Text, TextInput, View, TouchableOpacity, StyleSheet, Image, FlatList } from 'react-native'
 import mockLocations from '../mocks/MockLocations'
 import { findAddressByCep, FindLatitudeAndLongitude } from '../services/GeolocationApis';
 import { useState } from 'react';
@@ -52,6 +52,10 @@ export default function CommunityRegister() {
             return;
           }
         const {latitude, longitude} = await FindLatitudeAndLongitude(address);
+        if (!latitude || !longitude) {
+            alert("Erro ao encontrar a localização. Verifique o endereço e tente novamente.");
+            return;
+        }
         const newCommunity = {
             id: dataMock.length + 1,
             latitude: latitude,
@@ -82,64 +86,67 @@ export default function CommunityRegister() {
 
   
     return(
-        <View style={styles.container}>
-            <Text style={styles.title}>Cadastro de Comunidade</Text>
-            <Image
-                source={require('../../assets/register-screen.jpg')}
-                style={styles.image}
-            />
-            <TextInput
-                placeholder="Nome da Comunidade"
-                style={styles.textInput}
-                value={community.name}
-                onChangeText={(text) => setCommunity({...community, name: text})}
-            />
-                
-            <TextInput
-                placeholder="Número"
-                style={styles.textInput}
-                keyboardType='numeric'
-                value={address.number}
-                onChangeText={(text) => setAddress({ ...address, number: text })}
-            />
-            <View style={styles.inputWithIcon}>
-                <TextInput
-                    placeholder="CEP"
-                    value={address.cep}
-                    keyboardType='numeric'
-                    style={[styles.textInput, styles.textInputWithIcon]}
-                    onChangeText={(text) => setAddress({ ...address, cep: text })}
-                />
-                <TouchableOpacity onPress={handleFindAddress}>
-                    <Ionicons name="search-outline" size={32} color="#2196F3" />
-                </TouchableOpacity>
+        <FlatList
+            data={[]}
+            ListHeaderComponent={
+                <View style={styles.container}>
+                    <Text style={styles.title}>Cadastro de Comunidade</Text>
+                    <Image
+                        source={require('../../assets/register-screen.jpg')}
+                        style={styles.image}
+                    /> 
+                    <TextInput
+                        placeholder="Nome da Comunidade"
+                        style={styles.textInput}
+                        value={community.name}
+                        onChangeText={(text) => setCommunity({...community, name: text})}
+                    />
+                        
+                    <TextInput
+                        placeholder="Número"
+                        style={styles.textInput}
+                        keyboardType='numeric'
+                        value={address.number}
+                        onChangeText={(text) => setAddress({ ...address, number: text })}
+                    />
+                    <View style={styles.inputWithIcon}>
+                        <TextInput
+                            placeholder="CEP"
+                            value={address.cep}
+                            keyboardType='numeric'
+                            style={[styles.textInput, styles.textInputWithIcon]}
+                            onChangeText={(text) => setAddress({ ...address, cep: text })}
+                        />
+                        <TouchableOpacity onPress={handleFindAddress}>
+                            <Ionicons name="search-outline" size={32} color="#2196F3" />
+                        </TouchableOpacity>
 
-            </View>
-            
-            <View style={styles.inputWithIcon}>
-                <TextInput
-                    placeholder='Necessidade da Comunidade'
-                    style={[styles.textInput, styles.textInputWithIcon]}
-                    value={communityNeed}
-                    onChangeText={(text) => setCommunityNeed(text)}
-                />
-                <TouchableOpacity onPress={() => addCommunityNeeds(communityNeed)}>
-                    <Ionicons name="add-circle-outline" size={32} color="#2196F3" />
-                </TouchableOpacity>
-            </View>
-            {
-                community.address != "" &&
-                    <CommunityDetailsCard item={community} style={styles.card}/>
+                    </View>
+                    
+                    <View style={styles.inputWithIcon}>
+                        <TextInput
+                            placeholder='Necessidade da Comunidade'
+                            style={[styles.textInput, styles.textInputWithIcon]}
+                            value={communityNeed}
+                            onChangeText={(text) => setCommunityNeed(text)}
+                        />
+                        <TouchableOpacity onPress={() => addCommunityNeeds(communityNeed)}>
+                            <Ionicons name="add-circle-outline" size={32} color="#2196F3" />
+                        </TouchableOpacity>
+                    </View>
+                    {
+                        community.address != "" &&
+                            <CommunityDetailsCard item={community}/>
+                    }
+                </View>
             }
-
-            
-            <TouchableOpacity style={styles.bottom} onPress={handleSaveCommunity}>
-                <Ionicons name="checkmark-circle-outline" size={32} color="#4CAF50" />
-                <Text>Salvar Comunidade</Text>
-            </TouchableOpacity>
-           
-
-        </View>
+            ListFooterComponent={
+                <TouchableOpacity style={styles.bottom} onPress={handleSaveCommunity}>
+                    <Ionicons name="checkmark-circle-outline" size={32} color="#4CAF50" />
+                    <Text>Salvar Comunidade</Text>
+                </TouchableOpacity>
+            }
+        />
     )
 }
 
@@ -193,6 +200,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         gap: 5,
         justifyContent: "center",
+        marginHorizontal: 20,
     },
 
 });

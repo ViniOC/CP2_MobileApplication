@@ -11,7 +11,8 @@ export async function FindLatitudeAndLongitude(address) {
         const geometryLocation = {"latitude": lat, "longitude":lng}
         return geometryLocation;
     } catch (error) {
-        console.error(error);
+        console.log(error);
+        return {latitude: null, longitude: null};
     }  
 }
 
