@@ -10,7 +10,7 @@ export default function CommunitiesScreen({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.headerLink}>
-                <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
+                <NavigationBottom nameBottom="Mapa" navigation={navigation} namePage="MapPage" />
             </View>
             <Image
                 source={require('../../assets/community-registered.jpg')}

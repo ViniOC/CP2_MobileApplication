@@ -90,7 +90,6 @@ export default function CommunityRegister() {
             data={[]}
             ListHeaderComponent={
                 <View style={styles.container}>
-                    <Text style={styles.title}>Cadastro de Comunidade</Text>
                     <Image
                         source={require('../../assets/register-screen.jpg')}
                         style={styles.image}
@@ -155,12 +154,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#f5f4fa",
         marginHorizontal: 20,
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: "bold",
-        textAlign: "center",
-        marginTop: 20,
     },
     image: { 
         width: '95%', 
