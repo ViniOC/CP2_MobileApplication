@@ -8,10 +8,9 @@ export default function HomePage({navigation}) {
     return(
         <ScrollView style={styles.container}>
             <View style={styles.headerLinks}>
-                <NavigationBottom nameBottom="About the Developers" navigation={navigation} namePage="Dev" />
-                <NavigationBottom nameBottom="Registered communities" navigation={navigation} namePage="CommunitiesScreen" />
-                <NavigationBottom nameBottom="Register your community" navigation={navigation} namePage="CommunityPage" />
-                <NavigationBottom nameBottom="Go to Map Page" navigation={navigation} namePage="MapPage" />
+                <NavigationBottom nameBottom="Pagina dos Devs" navigation={navigation} namePage="Dev" />
+                <NavigationBottom nameBottom="Comunidades Cadastradas" navigation={navigation} namePage="Communities" />
+                <NavigationBottom nameBottom="Cadastro de Comunidade" navigation={navigation} namePage="CommunityRegister" />
             </View>
 
             <Text style={styles.name}>Solidarize</Text>
