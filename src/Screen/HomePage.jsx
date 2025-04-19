@@ -10,7 +10,8 @@ export default function HomePage({navigation}) {
             <View style={styles.headerLinks}>
                 <NavigationBottom nameBottom="Pagina dos Devs" navigation={navigation} namePage="Dev" />
                 <NavigationBottom nameBottom="Comunidades Cadastradas" navigation={navigation} namePage="Communities" />
-                <NavigationBottom nameBottom="Cadastro de Comunidade" navigation={navigation} namePage="CommunityRegister" />
+                <NavigationBottom nameBottom="Cadastro de Comunidade" navigation={navigation}namePage="CommunityRegister" />
+                <NavigationBottom nameBottom="Doações" navigation={navigation} namePage={"Donation"} />
             </View>
 
             <Text style={styles.name}>Solidarize</Text>

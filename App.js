@@ -10,6 +10,7 @@ import CommunitiesScreen from './src/Screen/CommunitiesScreen';
 import CommunityRegister from './src/Screen/CommunityRegister';
 import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Donation from './src/Screen/Donation';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ function HomeStack() {
       <Stack.Screen name="Home" component={HomePage} options={{ title: 'Home' }}/>
       <Stack.Screen name="MapPage" component={MapPage} options={{ title: 'Mapa' }} />
       <Stack.Screen name="Communities" component={CommunitiesScreen} options={{title: "Comunidades Cadastradas"}}/>
+      <Stack.Screen name='Donation' component={Donation} options={{title: "Doação"}}/>
     </Stack.Navigator>
   );
 }
