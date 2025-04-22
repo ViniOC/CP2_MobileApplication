@@ -1,0 +1,1 @@
+EXPO_PUBLIC_API_KEY = "35rHdPPlmSo6uouVVbnOCBmm7hzMKHryURIiJctv0SO8hGdtyoTl9lh3OkTIRLjo"
